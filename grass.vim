@@ -8,13 +8,15 @@ endif
 
 
 syn case match
-syn match GrassProgram /.*/ contains=Grassw,GrassW,Grassv,GrassComment
-syn match Grassw /[wｗ]/ contained
-syn match GrassW /[WＷ]/ contained
-syn match Grassv /[vｖ]/ contained
+syn match GrassProgram /.*/ contains=GrassLeafSmallW,GrassLeafW,GrassLeafV,GrassComment
+syn match GrassLeafSmallW /[wｗ]/ contained
+syn match GrassLeafW /[WＷ]/ contained
+syn match GrassLeafV /[vｖ]/ contained
 syn match GrassComment /[^wｗWＷvｖ]\+/ contained
 
-hi GrassGreen guifg=Green
+hi GrassLightGreen guifg=#00ff00
+hi GrassGreen guifg=#00aa00
+hi GrassDarkGreen guifg=#006600
 
 
 
@@ -25,9 +27,9 @@ if v:version >= 508 || !exists("did_grass_syn_inits")
     else
         command -nargs=+ HiLink hi def link <args>
     endif
-    HiLink Grassw GrassGreen
-    HiLink GrassW GrassGreen
-    HiLink Grassv GrassGreen
+    HiLink GrassLeafSmallW GrassLightGreen
+    HiLink GrassLeafW GrassGreen
+    HiLink GrassLeafV GrassDarkGreen
     HiLink GrassComment Comment
     delcommand HiLink
 endif
