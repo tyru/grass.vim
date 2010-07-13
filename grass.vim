@@ -9,10 +9,10 @@ endif
 
 syn case match
 syn match GrassProgram /.*/ contains=Grassw,GrassW,Grassv,GrassComment
-syn match Grassw /ｗ/ contained
-syn match GrassW /Ｗ/ contained
-syn match Grassv /ｖ/ contained
-syn match GrassComment /[^ｗＷｖ]\+/ contained
+syn match Grassw /[wｗ]/ contained
+syn match GrassW /[WＷ]/ contained
+syn match Grassv /[vｖ]/ contained
+syn match GrassComment /[^wｗWＷvｖ]\+/ contained
 
 hi GrassGreen guifg=Green
 
